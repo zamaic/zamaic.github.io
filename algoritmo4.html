@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie Fibonacci</title>
+    <script>
+        function fibonacci() {
+            var resultado = ""; // Inicializa la cadena vacía
+            var limite = parseInt(document.getElementById("limite").value);
+
+            if (!isNaN(limite) && limite > 1) {
+                var num1 = 0;
+                var num2 = 1;
+
+                while (num1 <= limite) {
+                    resultado += `${num1}<br>`; // Concatenar cada número de Fibonacci a la cadena resultado
+                    var num3 = num1 + num2;
+                    num1 = num2;
+                    num2 = num3;
+                }
+
+                document.getElementById("out").innerHTML = resultado;
+            } else {
+                document.getElementById("out").innerHTML = "El valor debe ser numérico y mayor a 1";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><a href="index.html">Regresar al menú</a><br></p>
+    <h1>Serie Fibonacci</h1>
+    <p>Serie o sucesión de Fibonacci, solicite el límite al usuario.</p>
+    Límite: <input type="text" value="10" id="limite"><br>
+    <input type="button" value="Ver la serie" onclick="fibonacci()"><br>
+    <p id="out">Resultado:</p><br>
+</body>
+</html>

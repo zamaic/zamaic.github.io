@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 7</title>
+    <script src="./js/ofuscadoelementos.js"></script>
+</head>
+<body onload="Aleatorio()">
+<h1>Cálculos de un arreglo</h1>
+<p>Capture un arreglo de 10 elementos de tipo entero, 
+    imprima el arreglo de forma vertical y horizontal, 
+    imprima el arreglo de forma ascendente y descendente,
+    encuentre el elemento menor, el mayor, la suma,
+    el promedio o media, la mediana y la moda.
+</p>
+
+<form action="javascript: Capturar()">
+    <p id="contador">Elemento [0]:</p>
+    <input type="number" id="elementoInput" required>
+    <input type="submit" value="Capturar" id="capturarBoton">
+    <input type="button" value="Reiniciar" onclick="Reiniciar()">
+    <input type="button" value="Generar resultados" id="generarBoton" onclick="Calcular()" disabled>
+    <p id="resultados"></p>
+
+    <table id="tablahorizontal" border="1">
+        <tr id="renglonIndice"> </tr>
+        <tr id="renglonDato"> </tr>
+    </table>
+
+    <table id="tablahorizontal2" border="1">
+        <tr id="renglonIndice2"> </tr>
+        <tr id="renglonDato2"> </tr>
+    </table>
+
+    <table id="tablahorizontal3" border="1">
+        <tr id="renglonIndice3"> </tr>
+        <tr id="renglonDato3"> </tr>
+    </table>
+    
+    <table id="tablaVertical" border="1"></table>
+    <table id="tablaVertical2" border="1"></table>
+    <table id="tablaVertical3" border="1"></table>
+</form>
+</body>
+</html>

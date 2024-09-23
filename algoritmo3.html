@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 3</title>
+    <script>
+        function cubo(){
+            if(!isNaN(document.getElementById("num").value) && 1 < (document.getElementById("num").value)){
+                var naturales = parseInt(document.getElementById("num").value);
+                var resultado = "Resultado: <br>";
+                for (let i = 2; i <= naturales; i++) {
+                    if(i%2==0){
+                        resultado+=`${i} al cubo es ${i*i*i}<br>`;
+                    }
+                } 
+                document.getElementById("out").innerHTML = resultado;  
+            } else {document.getElementById("out").innerHTML=`El valor debe ser númerico y mayor a 0`;}
+        }
+    </script>
+</head>
+<body>
+    <h1>Numeros al cubo</h1>
+    <p>Escribir un programa que muestre en pantalla los cinco primeros números naturales pares elevados al cubo.<br></p>
+    <p>Ejemplo:<br>
+    2 al cubo es 8<br>
+    4 al cubo es 64<br>
+    6 al cubo es ...<br>
+    8 al cubo es ...<br>
+    100 al cubo es ... <br></p>
+
+    Cantidad de números naturales pares: <input type="text" value="10" id="num"><br>
+    <input type="button" value="Encontrar los primeros n números naturales" onclick="cubo()"><br>
+    <p id="out"> Resultado:</p><br>
+    <p><a href="index.html">Regresar al menú</a><br></p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 3</title>
+    <script src="./js/ofuscadocm.js"></script>
+</head>
+<body onload="Generar()">
+    <a href="index.html"><button>Regresar al menú</button></a><br>
+    <h1>Cuadrado Mágico</h1>
+    <p>Los cuadrados mágicos son un conjunto de números enteros diferentes colocados en las casillas de un cuadrado, y se caracterizan porque la suma de sus filas, columnas y diagonales principales es siempre la misma.</p>
+    <p>Seleccione el tamaño del cuadrado:</p>
+    <select id="lados" onchange="Generar()">
+        <option value="2">2x2</option>
+        <option value="3">3x3</option>
+        <option value="4">4x4</option>
+        <option value="5">5x5</option>
+    </select>
+    <input type="button" value="Generar" onclick="Generar()">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <input type="button" value="Ejemplo de cuadrado" onclick="EjemploCuadrado()">
+    <input type="button" value="Ejemplo de cuadrado mágico" onclick="EjemploMagico()">
+    <table border="0.5" id="cuadrado" style="border-collapse: collapse;"></table>
+    <p id="verificar" style="color: crimson;">No es cuadrado mágico</p>
+</body>
+</html>

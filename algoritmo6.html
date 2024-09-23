@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 6</title>
+    <script src="./js/ofuscadoarreglo.js" defer></script>
+</head>
+<body>
+    <h1>Imprimir arreglo</h1>
+    
+    <p>
+    Capture e imprima un arreglo de 10 elementos de tipo entero. El arreglo se debe de imprimir de forma horizontal y vertical, muestre el índice de cada elemento. La captura de elementos se debe cancelar al introducir el último. Incluya un botón de reinicio.
+    </p>
+
+    <form action="javascript:Capturar()">
+        <p id="arreglo">Capture el elemento [0]</p>
+        <input type="number" id="datos" onkeydown="if(event.key==='.'){event.preventDefault();}" required>
+        <p id="error"></p>
+        <input type="submit" id="botoncapturar" value="Capturar"> <!-- Cambié el ID para que coincida -->
+        <input type="button" value="Reiniciar" onclick="Reiniciar()">
+    </form>
+
+    <p>Salida:</p>
+    <table border="1">
+        <tr id="renglon"></tr>
+        <tr id="renglon2"></tr>
+    </table>
+    <br>
+    <table border="1" id="tablaV">
+            <tr id="renglon"></tr>
+            <tr id="renglon2"></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <a href="index.html">Regresar al menú</a>
+    <br><br>
+</body>
+</html>

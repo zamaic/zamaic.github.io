@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de π</title>
+    <script>
+        function calcularPi() {
+            var iteracion = parseInt(document.getElementById("iteracion").value);
+            var resultado = 0;
+            var control = false;
+            var formula = "π = 4.0 (";
+
+            if (iteracion > 0) {
+                for (let i = 1; i < iteracion * 2; i += 2) {
+                    if (control) {
+                        if (i < iteracion * 2 - 1) {
+                            formula += "1/" + i + " + ";
+                        } else {
+                            formula += "1/" + i;
+                        }
+                        resultado -= 1.0 / i;
+                        control = false;
+                    } else {
+                        if (i < iteracion * 2 - 1) {
+                            formula += "1/" + i + " - ";
+                        } else {
+                            formula += "1/" + i;
+                        }
+                        resultado += 1.0 / i;
+                        control = true;
+                    }
+                }
+                formula += ")";
+                document.getElementById("output").innerHTML = formula + "<br>π ≈ " + (4 * resultado);
+            } else {
+                document.getElementById("output").innerHTML = "ERROR: El número de iteraciones debe ser mayor a 0";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><a href="index.html">Regresar al menú</a><br></p>
+    <h1>Cálculo de π usando la fórmula de Leibniz</h1>
+    <label for="iteracion">Número de iteraciones:</label>
+    <input type="text" id="iteracion" value="10"><br><br>
+    <button onclick="calcularPi()">Calcular π</button>
+    <p id="output"></p>
+</body>
+</html>
